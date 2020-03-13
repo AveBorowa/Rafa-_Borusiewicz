@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
                    plik1>>liczba[i];
                    plik1>>tekzt1[i];
 
-				   tekzt[i] = tekzt1[i].erase(0, liczba[i]);
+				   tekzt[i] = tekzt1[i].substr(0, liczba[i]);
                 	i++;
                    }
 
@@ -39,4 +39,3 @@ int main(int argc, char** argv) {
 
 	return 0;
 }
-
