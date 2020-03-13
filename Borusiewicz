@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main(int argc, char** argv) {
+
+   fstream plik1;
+   string liczby[100000];
+   int licznik[100000];
+   int i=0;
+
+   plik1.open("D:\C++\do.txt");
+
+   if(plik1.good())
+            while(!plik1.eof())
+                  {
+                   plik1>>liczby[i];
+                   plik1>>licznik[i];
+
+				   liczby[i] = liczby[i].erase(0, ile[i]);
+                	i++;
+                   }
+
+                  plik1.close();
+
+
+    plik1.open("d:\C++\do.txt");
+
+
+	for(int j=0;j<i;j++){
+		plik1<<liczby[j]<<endl;
+	}
+
+    plik1.close();
+
+    cout<<"Gotowe!";
+
+	return 0;
+}
