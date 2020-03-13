@@ -7,8 +7,8 @@ using namespace std;
 int main(int argc, char** argv) {
 
    fstream plik1;
-   string liczby[100000];
-   int licznik[100000];
+   string tekzt1[100000];
+   int liczba[100000];
    int i=0;
 
    plik1.open("D:\C++\do.txt");
@@ -16,10 +16,10 @@ int main(int argc, char** argv) {
    if(plik1.good())
             while(!plik1.eof())
                   {
-                   plik1>>liczby[i];
-                   plik1>>licznik[i];
+                   plik1>>liczba[i];
+                   plik1>>tekzt1[i];
 
-				   liczby[i] = liczby[i].erase(0, ile[i]);
+				   tekzt[i] = tekzt1[i].erase(0, liczba[i]);
                 	i++;
                    }
 
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
 
 
 	for(int j=0;j<i;j++){
-		plik1<<liczby[j]<<endl;
+		plik1<<tekzt1[j]<<endl;
 	}
 
     plik1.close();
@@ -39,3 +39,4 @@ int main(int argc, char** argv) {
 
 	return 0;
 }
+
