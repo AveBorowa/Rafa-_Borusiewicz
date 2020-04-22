@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string imie;
+    string nazwisko;
+    string dosort;
+    
+    cout << "! Nie uzywaj polskich znakow ! "<<endl;
+    
+    cout << "Podaj swoje imie: ";
+    cin >> imie;
+    
+    cout << "Podaj swoje nazwisko: ";
+    cin >> nazwisko;
+    
+    dosort = imie + nazwisko;
+   
+    cout << "Zaczynam sortowanie";
+   
+    for( int i = 0; i < dosort.length() - 1; i++ )
+    for( int j = 0; j < dosort.length() - 1; j++ )
+    if( dosort[ j ] > dosort[ j + 1 ] )
+         swap( dosort[ j ], dosort[ j + 1 ] );
+   
+    cout << dosort;
+   
+    system( "PAUSE" );
+    return 0;
+}
