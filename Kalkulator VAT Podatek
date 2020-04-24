@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    
+    
+        
+    function oblicz()
+        {
+            var cena = document.getElementById("cena").value;
+            var ilosc = document.getElementById("ilosc").value;
+            
+            var tpodatek = document.getElementById("podatek").checked
+            var tvat = document.getElementById("vat").checked
+            
+         
+            var podatek = parseFloat(cena * 1.18) * parseFloat(ilosc);
+            
+            var vat = parseFloat(cena * 1.23) * parseFloat(ilosc);
+            
+            var wynik = parseFloat(cena) * parseFloat(ilosc);
+            document.getElementById("netto").innerHTML = wynik ;  
+            
+            if(tpodatek == true)
+                {
+                    document.getElementById("brutto18").innerHTML = podatek ;
+                };
+            
+            if(tvat == true)
+                {
+                    document.getElementById("brutto23").innerHTML = vat;
+                };
+           
+           
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    
+    <div>
+    Cena:     <input type="text" id="cena" /><br>
+    Ilość:    <input type="text" id="ilosc" /><br><br><br>
+    
+        
+        
+    
+    </div>
+    
+    VAT <input type="checkbox" id="vat" />
+    Podatek <input type="checkbox" id="podatek" /><br>
+    
+    Cena netto: <div id="netto"></div><br>
+    Cena brutto z podatkiem: <div id="brutto18"></div><br>
+    Cena brutto z VAT: <div id="brutto23"></div><br><br>
+    
+    <input type="submit" value="Oblicz Cene" onclick="oblicz()"/>
+    
+</body>
+</html>
