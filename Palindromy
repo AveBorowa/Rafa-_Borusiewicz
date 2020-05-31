@@ -1,0 +1,36 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+string wyraz;
+int i,j;
+
+string Tak=" Palindrom" , Nie=" Nie jest Palindromem";
+
+ifstream odczyt("plik.txt");
+odczyt >> wyraz;
+
+	odczyt>>i>>j;
+
+for (i = 0, j = wyraz.length()-1; i < j; i++, j--)
+{
+if (wyraz[i] != wyraz[j])
+break;
+}
+
+ofstream zapis("plik.txt");
+
+
+if (i < j)
+zapis<< wyraz << Tak << endl;
+else
+zapis<< wyraz << Nie << endl;
+
+zapis.close();
+odczyt.close();
+return 0;
+}
