@@ -1,0 +1,39 @@
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+using namespace std;
+
+int main()
+{
+        ofstream plik;
+        plik.open("plik.txt");
+        ifstream dane("dane.txt");
+
+        int liczba;
+        int y=2;
+
+        dane>>liczba;
+
+
+
+
+        plik<<"Czynniki liczby "<<liczba<<": ";
+
+
+
+
+        while(liczba>1)
+        {
+                while(liczba%y==0)
+                {
+                        plik<<y<<" ";
+                        liczba/=y;
+                }
+                ++y;
+        }
+
+
+        plik.close();
+        system("pause");
+        return 0;
+}
